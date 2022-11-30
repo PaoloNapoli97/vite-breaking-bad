@@ -1,17 +1,28 @@
 <script>
+import { store } from "../store.js";
+
 export default {
   name: "SearchBar",
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <div>
-    <form action="">
+    <form @change="$emit('search')">
       <div class="col-auto">
-        <select class="form-select">
-          <option selected>Select Category</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
+        <select
+          class="form-select"
+          name="category"
+          v-model="store.categoryValue"
+        >
+          <option value="">Select Category</option>
+          <option value="Breaking Bad">Breaking Bad</option>
+          <option value="Better Call Saul">Better Call Saul</option>
         </select>
       </div>
     </form>

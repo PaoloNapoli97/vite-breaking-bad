@@ -11,8 +11,10 @@ export default {
   <div class="card">
     <img :src="info.img" :alt="info.name" />
     <h3>{{ info.name }}</h3>
-    <div class="serie">{{ info.category }}</div>
-    <div class="status">{{ info.status }}</div>
+    <div class="info">
+      <div class="serie">{{ info.category }}</div>
+      <div class="status">{{ info.status }}</div>
+    </div>
   </div>
 </template>
 
@@ -25,8 +27,17 @@ export default {
 
   img {
     width: 100%;
-    height: 100px;
+    height: 200px;
     object-fit: contain;
+  }
+
+  h3 {
+    padding: 10px 0;
+  }
+
+  .info {
+    color: gray;
+    padding-bottom: 30px;
   }
 }
 </style>
